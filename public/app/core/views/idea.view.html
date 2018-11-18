@@ -1,0 +1,78 @@
+<div class="col-md-10 codementor-full-height">
+    <div class="row border-bottom">
+        <div class="col-md-8 col-md-offset-1 codementor-margin-sm">
+            <span class="idea-title">My ideas</span>
+        </div>
+        <div class="col-md-3 codementor-margin-sm">
+            <img ng-click="vm.createIdea()" src="app/core/img/btn_addanidea.png" class="create-idea"> </img>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="codementor-margin-sm" ng-show="vm.ideas.length >0 || vm.savedIdeas.length > 0">
+            <div class="row ideaheader">
+                <div class="col-md-5 ">
+                </div>
+                <div class="col-md-1">Impact</div>
+                <div class="col-md-1">Ease</div>
+                <div class="col-md-1">Confidence</div>
+                <div class="col-md-1">Avg</div>
+            </div>
+            <li class=" codementor-margin-sm" ng-repeat="saveIdea in vm.savedIdeas">
+                <div class="row ideas">
+                    <div class="col-md-5">
+                        <p class="lead">{{saveIdea.content}}</span>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="lead">{{saveIdea.impact}}</span>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="lead">{{saveIdea.ease}}</span>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="lead">{{saveIdea.confidence}}</span>
+                    </div>
+                    <div class="col-md-1">
+                        <p class="lead">{{saveIdea.average_score | number}}</span>
+                    </div>
+                    <div class="col-md-1">
+                        <a ng-click="vm.editIdea(saveIdea.id,saveIdea.content,saveIdea.impact,saveIdea.ease,saveIdea.confidence)">
+                            <img src="app/core/img/pen.png" />
+                        </a>
+                    </div>
+                    <div class="col-md-0">
+                        <a ng-click="vm.deleteIdea(saveIdea.id)">
+                            <img src="app/core/img/bin.png" />
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class=" codementor-margin-sm" ng-repeat="idea in vm.ideas track by $index">
+                <div class="row ideas">
+                    <div class="col-md-5">
+                        <input type="text" value="{{idea.content}}" ng-model="idea.content"></input>
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-control" ng-model="idea.impact" ng-options="o as o for o in vm.options">
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-control" ng-model="idea.ease" ng-options="o as o for o in vm.options">
+                        </select>
+                
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-control" ng-model="idea.confidence" ng-options="o as o for o in vm.options">
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        {{((idea.confidence -0) + (idea.ease-0) + (idea.impact-0))/3 | number}}
+                    </div>
+                    <div class="col-md-3">
+                        <a ng-click="vm.saveIdea(idea.content,idea.impact,idea.ease,idea.confidence,$index,idea.id)">Save</a> |
+                        <a ng-click="vm.removeIdea($index)">Remove</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

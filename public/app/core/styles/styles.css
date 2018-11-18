@@ -1,0 +1,138 @@
+html,
+body {
+    height: 100%;
+}
+
+.codementor-full-height {
+    height: 100%;
+}
+
+.codementor-nav {
+    background: #00A843;
+}
+
+.codementor-margin-lg {
+    margin-top: 37px;
+}
+
+.codementor-margin-sm {
+    margin-top: 10px;
+}
+
+.codementor-nav-title {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.codementor-main-container .codementor-btn {
+    background-color: #00A843;
+    color: #fff;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
+
+.codementor-btn:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.codementor-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #455E70;
+    outline: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 0;
+    border-bottom: 1px solid #455E70;
+    outline: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+a.codementor-margin-sm {
+    font-size: 16px;
+    color: rgba(42, 56, 66, 0.65);
+}
+
+.loginSection {
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+    ;
+}
+
+a {
+    color: #00A843;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: green;
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 35px;
+}
+
+form input.ng-invalid:not(.ng-pristine) {
+    border-color: red;
+}
+
+.codementor-profile-img {
+    width: 64px;
+    height: 64px;
+}
+
+.error-message {
+    text-align: left;
+    color: red;
+    font-size: 12px;
+}
+
+.idea-title {
+
+    font-size: 28px;
+    color: #2A3842;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(42, 56, 66, 0.20);
+    padding: 10px;
+    margin: 5px;
+}
+
+.create-idea {
+    width: 50px;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+
+.ideas {
+    display: inline-block;
+    width: 100%;
+}
+.ideas input {
+    padding-top: 15px;
+}
+.ideaheader .col-md-1 {
+    padding-left: 0 !important;
+}

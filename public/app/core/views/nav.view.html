@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <img src="app/core/img/ideaPool_icon.png" class="codementor-margin-lg"> </img>
+        <p class="lead codementor-nav-title codementor-margin-sm">
+            The idea pool
+        </p>
+    </div>
+    <div class="col-md-12 text-center loginSection" ng-show="vm.loggedInView">
+        <img ng-src="{{vm.profileImg}}" class="codementor-margin-lg codementor-profile-img"> </img>
+        <p class="lead codementor-nav-title codementor-margin-sm">
+           {{vm.name}}
+        </p>
+         <a class="codementor-margin-sm" ng-click="vm.logout()">
+           Logout
+        </a>
+    </div>
+</div>

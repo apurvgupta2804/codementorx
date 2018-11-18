@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title ng-bind="pageTitle"></title>
+    <meta charset="UTF-8">
+    <!-- Mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
+    </style>
+    <link rel="stylesheet" href="app/core/styles/bootstrap.css">
+    <link rel="stylesheet" href="app/core/styles/styles.css">
+</head>
+
+<body ng-app="codementor">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/app.module.full.js"></script>
+    <script src="app/app.module.common.js"></script>
+    <script src="app/core/controllers/home.controller.js"></script>
+    <script src="app/core/controllers/login.controller.js"></script>
+    <script src="app/core/controllers/idea.controller.js"></script>
+    <script src="app/core/config/core.routes.common.js"></script>
+    <script src="app/core/services/storage/storage.service.js"></script>
+    <script src="app/core/services/interceptor/auth.intercepator.js"></script>
+    <script src="app/core/services/apis/codementor.api.service.js"></script>
+    <script src="app/modules/app.modules.module.js"></script>
+    <!-- <script src="app/modules/authentication/authentication.module.js"></script>
+        <script src="app/modules/authentication/config/auth.config.js"></script>
+        <script src="app/modules/authentication/config/auth.routes.js"></script>
+        <script src="app/modules/authentication/controllers/login.controller.js"></script>
+        <script src="app/modules/authentication/controllers/signup.controller.js"></script>
+        <script src="app/modules/authentication/services/auth.factory.js"></script>
+        <script src="app/modules/authentication/services/authInterceptor.factory.js"></script> -->
+    <div class="container-fluid codementor-full-height">
+        <div class="row codementor-full-height">
+            <div class="col-md-2 codementor-full-height codementor-nav">
+                <div ui-view="navPanel"></div>
+            </div>
+            <div ui-view="ideaPanel" class="codementor-full-height"></div>
+        </div>
+    </div>
+</body>
+
+</html>
