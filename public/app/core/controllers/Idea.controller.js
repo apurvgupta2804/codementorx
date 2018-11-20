@@ -6,13 +6,16 @@
         .module('core')
         .controller('IdeaCtrl', IdeaCtrl);
 
-    function IdeaCtrl($location, IdeasAPI, $storage) {
-
+    function IdeaCtrl($location, IdeasAPI, $storage, $uibModal, $scope) {
         var vm = this;
         vm.loggedInView = true;
         vm.ideas = [];
         vm.savedIdeas = [];
+        vm.showModal = false;
         vm.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        vm.toggleAnimation = function() {
+            vm.animationsEnabled = vm.animationsEnabled;
+        };
 
         function init() {
             IdeasAPI.getUser().then(function(response) {
@@ -81,13 +84,21 @@
         };
 
         vm.deleteIdea = function(id) {
-            IdeasAPI.deleteIdea(id).then(function(response) {
+            vm.currentDeletionId = id;
+            vm.showModal = true;
+        };
+        vm.ok = function() {
+            IdeasAPI.deleteIdea(vm.currentDeletionId).then(function(response) {
                 getAllIdeas();
             });
+            vm.showModal = false;
+        };
+        vm.cancel = function() {
+            vm.showModal = false;
         };
 
         vm.editIdea = function(id, content, impact, ease, confidence) {
-            vm.savedIdeas= vm.savedIdeas.filter(function(e) {
+            vm.savedIdeas = vm.savedIdeas.filter(function(e) {
                 return e.id !== id;
             });
 
@@ -107,4 +118,5 @@
 
         init();
     }
+
 }).call(this);

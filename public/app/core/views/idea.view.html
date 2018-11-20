@@ -17,7 +17,7 @@
                 <div class="col-md-1">Confidence</div>
                 <div class="col-md-1">Avg</div>
             </div>
-            <li class=" codementor-margin-sm" ng-repeat="saveIdea in vm.savedIdeas">
+            <li class=" codementor-margin-sm" ng-repeat="saveIdea in vm.savedIdeas | orderBy : '-average_score'">
                 <div class="row ideas">
                     <div class="col-md-5">
                         <p class="lead">{{saveIdea.content}}</span>
@@ -58,7 +58,6 @@
                     <div class="col-md-1">
                         <select class="form-control" ng-model="idea.ease" ng-options="o as o for o in vm.options">
                         </select>
-                
                     </div>
                     <div class="col-md-1">
                         <select class="form-control" ng-model="idea.confidence" ng-options="o as o for o in vm.options">
@@ -74,5 +73,17 @@
                 </div>
             </li>
         </ul>
+    </div>
+</div>
+<div ng-show="vm.showModal" class="codementor-modal">
+    <div class="modal-header text-center">
+        <h3 class="modal-title">Are you sure?</h3>
+    </div>
+    <div class="modal-body text-center">
+        <p class="lead">This idea will be permanently deleted</p>
+    </div>
+    <div class="modal-footer text-center">
+        <a class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</a>
+        <a class="btn btn-primary" type="button" ng-click="vm.ok()">OK</a>
     </div>
 </div>
